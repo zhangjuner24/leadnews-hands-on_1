@@ -1,0 +1,43 @@
+server:
+  port: 9001
+
+
+spring:
+  application:
+    name: leadnews-media
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.85.143:3306/leadnews_media?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.85.143:8848
+  redis:
+    host: 192.168.85.143
+    redisson:
+      config:
+        clusterServersConfig:
+          nodeAddresses:
+            - "redis://192.168.85.143:6379"
+
+
+
+mybatis-plus:
+  configuration:
+    # sql输出到控制台,方便开发调试
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+minio:
+  endpoint: http://192.168.85.143:9000
+  accessKey: minio
+  secretKey: minio123
+  bucketName: heima
+
+aliyun:
+  oss:
+    accessKeyId: LTAI5tNzX3zwX2iVLf57EBU5
+    accessKeySecret: ROpAbINcLkPFDTrTpIBZUybZaeZNrk
+    scenes: porn,terrorism
+

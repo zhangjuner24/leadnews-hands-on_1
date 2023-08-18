@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.heima.common.knife4j.MyKnife4jConfiguration,\
+  \com.heima.common.minio.MinIOConfig

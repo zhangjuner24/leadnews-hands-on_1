@@ -1,0 +1,11 @@
+server:
+  port: 8001
+minio:
+  endpoint: http://192.168.85.143:9000
+  accessKey: minio
+  secretKey: minio123
+  bucketName: heima  # 你的是什么 这里就写什么
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB

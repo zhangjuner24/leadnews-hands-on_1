@@ -1,0 +1,34 @@
+server:
+  port: 9004
+
+
+spring:
+  application:
+    name: leadnews-article
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.85.143:3306/leadnews_article?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+  elasticsearch:
+    rest:
+      uris: http://192.168.85.143:9200
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.85.143:8848
+  redis:
+    host: 192.168.85.143
+    port: 6379
+
+mybatis-plus:
+  configuration:
+    # sql输出到控制台,方便开发调试
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+minio:
+  endpoint: http://192.168.85.143:9000
+  accessKey: minio
+  secretKey: minio123
+  bucketName: heima  #如果不一样就修改成你自己的桶

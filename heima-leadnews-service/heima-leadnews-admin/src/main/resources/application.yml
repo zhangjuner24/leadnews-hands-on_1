@@ -1,0 +1,23 @@
+server:
+  port: 9002
+
+
+spring:
+  application:
+    name: leadnews-admin
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.85.143:3306/leadnews_admin?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.85.143:8848
+mybatis-plus:
+  configuration:
+    # sql输出到控制台,方便开发调试
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com: debug
