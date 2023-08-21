@@ -126,15 +126,15 @@ public class WmNewsServiceImpl extends ServiceImpl<WmNewsMapper, WmNews> impleme
         map.put("articleId",wmNews.getArticleId());
         map.put("isDown",dto.getEnable()==0); // 要和Enable的值取反
 
-        kafkaTemplate.send(upDownTopic,JSON.toJSONString(map));
+        // kafkaTemplate.send(upDownTopic,JSON.toJSONString(map));
 
         return ResponseResult.okResult();
     }
     @Autowired
     private KafkaTemplate<String,String> kafkaTemplate;
 
-    @Value("${topic.upDownTopic}")  //从yml中获取
-    private String upDownTopic;
+    // @Value("${topic.upDownTopic}")  //从yml中获取
+    // private String upDownTopic;
 
 
 

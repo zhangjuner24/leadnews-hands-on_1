@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-@Component
+// @Component
 public class UpdateHotArticleScoreListener {
 
     @Autowired
@@ -24,7 +24,7 @@ public class UpdateHotArticleScoreListener {
 
             ArticleStreamMessage articleStreamMessage = JSON.parseObject(value, ArticleStreamMessage.class);
 
-            apArticleService.updateHotArticleScore(articleStreamMessage);
+            // apArticleService.updateHotArticleScore(articleStreamMessage);
 
         }
 

@@ -41,8 +41,8 @@ public class ApArticleServiceImpl extends ServiceImpl<ApArticleMapper, ApArticle
 
     @Autowired
     private IApArticleContentService apArticleContentService;
-   @Autowired
-    private CreateHtmlTask createHtmlTask;
+   // @Autowired
+   //  private CreateHtmlTask createHtmlTask;
    @Autowired
    private StringRedisTemplate redisTemplate;
 
@@ -62,7 +62,7 @@ public class ApArticleServiceImpl extends ServiceImpl<ApArticleMapper, ApArticle
             articleContent.setContent(dto.getContent());
             apArticleContentService.save(articleContent);
 
-            createHtmlTask.createHtml(article,dto.getContent());
+            // createHtmlTask.createHtml(article,dto.getContent());
 
             return ResponseResult.okResult(article.getId());
 
@@ -81,7 +81,7 @@ public class ApArticleServiceImpl extends ServiceImpl<ApArticleMapper, ApArticle
             updateWrapper.eq(ApArticleContent::getArticleId,dto.getId());
             apArticleContentService.update(updateWrapper);
 
-            createHtmlTask.createHtml(article,dto.getContent());
+            // createHtmlTask.createHtml(article,dto.getContent());
 
             return ResponseResult.okResult(article.getId());
         }
