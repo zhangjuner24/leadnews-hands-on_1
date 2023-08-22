@@ -16,4 +16,16 @@ mybatis-plus:
   configuration:
     # sql输出到控制台,方便开发调试
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+seata:
+  registry:
+    type: nacos # 使用nacos作为注册中心
+    nacos:
+      server-addr: 192.168.85.143:8848 # nacos服务地址
+      group: DEFAULT_GROUP # 默认服务分组
+      namespace: "" # 默认命名空间
+      cluster: default # 默认TC集群名称
+  tx-service-group: leadnews-user-group # 事务组名称
+  service:
+    vgroup-mapping:
+      leadnews-user-group: default # 事务组对应的TC集群名
 

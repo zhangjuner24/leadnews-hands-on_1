@@ -1,7 +1,7 @@
 package com.heima.media.service;
 
-import com.heima.media.entity.WmSensitive;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.heima.media.entity.WmSensitive;
 
 /**
  * <p>
@@ -12,5 +12,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2023-04-21
  */
 public interface IWmSensitiveService extends IService<WmSensitive> {
+
 
 }

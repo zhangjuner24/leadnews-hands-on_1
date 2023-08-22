@@ -2,16 +2,17 @@ package com.heima.media.entity;
 
 import com.alibaba.excel.annotation.ExcelIgnore;
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
-import java.util.Date;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -28,6 +29,8 @@ import lombok.EqualsAndHashCode;
 public class WmSensitive implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+
 
     /**
      * 主键
@@ -53,6 +56,9 @@ public class WmSensitive implements Serializable {
     // @ExcelProperty("创建时间")
     @ExcelIgnore
     private Date createdTime;
+
+    @TableField(exist = false)
+    private String name;
 
 
 }

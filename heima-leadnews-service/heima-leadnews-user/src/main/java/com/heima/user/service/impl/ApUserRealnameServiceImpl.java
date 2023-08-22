@@ -3,6 +3,7 @@ package com.heima.user.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.heima.common.dto.PageResponseResult;
 import com.heima.common.dto.ResponseResult;
 import com.heima.common.enums.AppHttpCodeEnum;
@@ -15,12 +16,10 @@ import com.heima.user.entity.ApUser;
 import com.heima.user.entity.ApUserRealname;
 import com.heima.user.mapper.ApUserRealnameMapper;
 import com.heima.user.service.IApUserRealnameService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.heima.user.service.IApUserService;
-
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 
@@ -58,7 +57,8 @@ public class ApUserRealnameServiceImpl extends ServiceImpl<ApUserRealnameMapper,
     }
 
     @Override
-    @Transactional //TODO 任务1：改成分布式事务
+    //@Transactional //TODO 任务1：改成分布式事务
+    @GlobalTransactional
     public ResponseResult auth(AuthDto dto, int type) { // 1:通过  0：驳回
 
         Long userId = dto.getId();//apUser的id

@@ -40,4 +40,16 @@ aliyun:
     accessKeyId: LTAI5tNzX3zwX2iVLf57EBU5
     accessKeySecret: ROpAbINcLkPFDTrTpIBZUybZaeZNrk
     scenes: porn,terrorism
+seata:
+  registry:
+    type: nacos # 使用nacos作为注册中心
+    nacos:
+      server-addr: 192.168.85.143:8848 # nacos服务地址
+      group: DEFAULT_GROUP # 默认服务分组
+      namespace: "" # 默认命名空间
+      cluster: default # 默认TC集群名称
+  tx-service-group: leadnews-media-group # 事务组名称
+  service:
+    vgroup-mapping:
+      leadnews-media-group: default # 事务组对应的TC集群名
 

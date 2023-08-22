@@ -17,6 +17,7 @@ spring:
               - POST
               - PUT
               - DELETE
+
       routes:
         # 平台管理
         - id: admin
